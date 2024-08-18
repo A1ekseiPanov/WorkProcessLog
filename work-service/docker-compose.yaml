@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  work-service-db:
+    container_name: work-service-db
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: work_service_db
+    ports:
+      - "5433:5432"
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+volumes:
+  pg_data:
