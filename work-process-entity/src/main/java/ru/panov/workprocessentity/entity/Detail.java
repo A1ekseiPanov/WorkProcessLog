@@ -1,18 +1,17 @@
 package ru.panov.workprocessentity.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Inheritance;
-import jakarta.persistence.InheritanceType;
-import ru.panov.workprocessentity.entity.BaseEntity;
+import jakarta.persistence.*;
 
 import java.time.LocalTime;
 
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
-public abstract class DetailInfo extends BaseEntity {
+public abstract class Detail extends BaseEntity {
+    //программа
+    private String program;
     //шифр детали
     private String cipher;
+
     //наименование детали
     private String name;
     // поверхность обработки детали
@@ -20,6 +19,10 @@ public abstract class DetailInfo extends BaseEntity {
     //время на 1 деталь
     @Column(name = "time_one_detail")
     private LocalTime timeOneDetail;
+    //количество деталей
     private Integer count;
     private String comment;
+    //оснастка
+    @OneToOne(mappedBy = "detail")
+    private ProductionAccessor productionAccessor;
 }

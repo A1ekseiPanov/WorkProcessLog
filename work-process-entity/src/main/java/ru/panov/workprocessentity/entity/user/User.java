@@ -7,7 +7,7 @@ import ru.panov.workprocessentity.entity.BaseEntity;
 import java.util.*;
 
 @Entity
-@Table(name = "users")
+@Table(name = "users", schema = "user")
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter

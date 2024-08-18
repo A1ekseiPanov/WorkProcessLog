@@ -8,7 +8,7 @@ import ru.panov.workprocessentity.entity.BaseEntity;
 
 //режимы наплавки
 @Entity
-@Table(name = "modes")
+@Table(name = "modes", schema = "science")
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter

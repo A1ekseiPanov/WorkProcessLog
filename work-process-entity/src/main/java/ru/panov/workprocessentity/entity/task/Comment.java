@@ -6,7 +6,7 @@ import ru.panov.workprocessentity.entity.BaseEntity;
 import ru.panov.workprocessentity.entity.user.User;
 
 @Entity
-@Table(name = "coments")
+@Table(name = "coments", schema = "task")
 @Setter
 @Getter
 @NoArgsConstructor

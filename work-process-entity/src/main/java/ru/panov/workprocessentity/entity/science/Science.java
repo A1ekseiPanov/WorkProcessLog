@@ -1,20 +1,19 @@
 package ru.panov.workprocessentity.entity.science;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.MapsId;
-import jakarta.persistence.OneToOne;
+import jakarta.persistence.*;
 import lombok.*;
-import ru.panov.workprocessentity.entity.DetailInfo;
+import ru.panov.workprocessentity.entity.BaseEntity;
+import ru.panov.workprocessentity.entity.Detail;
 import ru.panov.workprocessentity.entity.user.User;
 
 @Entity
+@Table(schema = "sciences")
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
 @Setter
 @Builder
-public class Science extends DetailInfo {
+public class Science extends BaseEntity {
     @OneToOne
     @MapsId
     @JoinColumn(name = "science_detail_id")
